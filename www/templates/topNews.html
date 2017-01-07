@@ -1,0 +1,18 @@
+<ion-view view-title="topNews">
+  <ion-content>
+    <ul>
+               <li ng-repeat="x in news">
+       <div class="list">
+    <a class="item item-thumbnail-left" href="#">
+      <img src="{{x.urlToImage}}" height="70" width="70">
+      <h2>{{x.title}} </h2><br>
+      <p>  <i class="icon ion-ios-sunny-outline"></i>
+    {{x.author}}<br>  <span class="item-note">
+      {{x.publishedAt}}
+    </span></p>
+    </a>
+</div>
+            </li>
+    </ul>
+  </ion-content>
+</ion-view>

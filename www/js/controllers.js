@@ -40,6 +40,22 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
+
+.controller('topNewsCtrl',function($scope,$http){
+ $http.get("https://newsapi.org/v1/articles?source=the-hindu&sortBy=top&apiKey=c023863c25b445068d7bf9f98b660991").then(function(response){
+   $scope.news=response.data.articles;
+   });
+})
+
+.controller('latestNewsCtrl',function($scope,$http){
+ $http.get("https://newsapi.org/v1/articles?source=the-hindu&sortBy=latest&apiKey=c023863c25b445068d7bf9f98b660991").then(function(response){
+   $scope.newslat=response.data.articles;
+  
+ });
+})
+
+
+
 .controller('versionCtrl',function($scope, $cordovaAppVersion){
   $scope.version2=function(){
    $cordovaAppVersion.getVersionNumber().then(function (version) {
